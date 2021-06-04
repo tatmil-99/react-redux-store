@@ -16,15 +16,16 @@ const initialState = {
     {id:6,title:'Blues', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:90,img: Item6}
 ],
   addedItems:[], 
-  total: 0
+  
 }
 
 const cartReducer = (state = initialState, action) => {
+  console.log(state)
   switch(action.type) {
     case "ADD_TO_CART":
-      let addedItem = state.items.find(item => item === item);
       
-      return {...state, addedItems: [...state.addedItems, addedItem]}
+      console.log(action.payload)
+      return {...state, addedItems: [...state.addedItems, action.payload]}
     default:
       return state;
   }

@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 const Home = () => {
   const dispatch = useDispatch();
   const items = useSelector(state => state.cartReducer.items);
-
+  
   let itemsList = items.map(item => {
     return (
       <div className="card" key={item.id}>
         <div className="card-img"> 
           <img src={item.img} alt={item.title}/>
           <span className="card-title">{item.title}</span>
-          <span to="/" className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons" onClick={(item) => dispatch({type: "ADD_TO_CART"}, item)}>add</i></span>
+          <span to="/" className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons" onClick={() => dispatch({type: "ADD_TO_CART", payload: item})}>add</i></span>
         </div>
 
         <div className="card-content">
