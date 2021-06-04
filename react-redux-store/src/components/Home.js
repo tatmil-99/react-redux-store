@@ -11,7 +11,7 @@ const Home = () => {
         <div className="card-img"> 
           <img src={item.img} alt={item.title}/>
           <span className="card-title">{item.title}</span>
-          <span to="/" className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons" onClick={() => console.log("clicked")}>add</i></span>
+          <span to="/" className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons" onClick={(item) => dispatch({type: "ADD_TO_CART"}, item)}>add</i></span>
         </div>
 
         <div className="card-content">
